@@ -1,0 +1,9 @@
+<map id="HoneyDLogStatement::HoneyDLogStatement" name="HoneyDLogStatement::HoneyDLogStatement">
+<area shape="rect" id="node2" href="$classhdparser_1_1honeyd__parser.html#a0ce25e54f7ffc29d34be7cd5e79594dd" title="hdparser::honeyd_parser\l::getTimeStamp" alt="" coords="213,5,379,46"/>
+<area shape="rect" id="node3" href="$classhdparser_1_1honeyd__parser.html#a3918b1f7ea62b9d0e19ad0829a127f4d" title="hdparser::honeyd_parser\l::getPacketType" alt="" coords="213,70,379,111"/>
+<area shape="rect" id="node4" href="$classhdparser_1_1honeyd__parser.html#a1611c91d4ad5b62c62a28a9ba99e3f3a" title="hdparser::honeyd_parser\l::getSourceIP" alt="" coords="213,135,379,177"/>
+<area shape="rect" id="node5" href="$classhdparser_1_1honeyd__parser.html#af88e8321b9e823b7ebca4335201c94b3" title="hdparser::honeyd_parser\l::getSourceSocket" alt="" coords="213,201,379,242"/>
+<area shape="rect" id="node6" href="$classhdparser_1_1honeyd__parser.html#a09c88f596ae9fbebc0be4e3f5e77d309" title="hdparser::honeyd_parser\l::getTargetIP" alt="" coords="213,266,379,307"/>
+<area shape="rect" id="node7" href="$classhdparser_1_1honeyd__parser.html#ac7e66fa4a9bf34671cd0870acd03823b" title="hdparser::honeyd_parser\l::getTargetSocket" alt="" coords="213,331,379,373"/>
+<area shape="rect" id="node8" href="$classhdparser_1_1honeyd__parser.html#af2a53b997823dda798ba4b91543db763" title="hdparser::honeyd_parser\l::getOsVersion" alt="" coords="213,397,379,438"/>
+</map>

@@ -1,0 +1,144 @@
+<!--
+   honeyD_Log.html
+   
+   Copyright 2014 Mason Howard <mason@fastbadger>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/classes/honeyd_parser</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.23.1" />
+	<link rel="stylesheet" type="text/css" href="doc-styles.css">
+
+</head>
+
+<!--
+
+namespace hdparser
+{
+	/* parser backend */
+	class honeyd_parser
+	{
+		public:
+			std::string currString;
+			std::string timeStamp;
+			std::string packetType;
+			std::string sourceIP;
+			std::string sourceSocket;
+			std::string targetIP;
+			std::string targetSocket;
+			std::string osVersion;
+			int index;
+			bool isGood;
+			enum WORDTYPE
+			{
+				TIMESTAMP,
+				PACKETTYPE,
+				SOURCEIP,
+				SOURCESOCKET,
+				TARGETIP,
+				TARGETSOCKET,
+				OSVERSION
+			};
+			//TODO:: implement a smarter parser
+
+			honeyd_parser();//done
+			honeyd_parser(std::string rawString);//done
+			~honeyd_parser();//nothing to do, so done by default
+			void setString(std::string rawString);//done
+			std::string getTimeStamp();//done
+			std::string getPacketType();//done
+			std::string getSourceIP();//done
+			std::string getTargetIP();//done
+			std::string getTargetSocket();//done
+			std::string getOsVersion();//done
+	};
+}
+-->
+
+<body>
+	<a href="index.html">Root</a></br>
+	<a href="classes.html">Up one level...</a>
+	<h1>/classes/honeyd_parser/</h1>
+	<h2>Definitions:</h2>
+	<ul>
+		<li>enum WORDTYPE --- will be used as I improve the parser</li>
+		<ul>
+			<li>TIMESTAMP</li>
+			<li>PACKETTYPE</li>
+			<li>SOURCEIP</li>
+			<li>SOURCESOCKET</li>
+			<li>TARGETIP</li>
+			<li>TARGETSOCKET</li>
+			<li>OSVERSION</li>
+		</ul>
+	</ul>
+	<h2>Public Fields</h2>
+	<ul>
+		<li>string currString</li>
+		<li>string timeStamp</li>
+		<li>string packetType</li>
+		<li>string sourceIP</li>
+		<li>string sourceSocket</li>
+		<li>string targetIP</li>
+		<li>string targetSocket</li>
+		<li>string osVersion</li>
+		<li>int index</li>
+		<ul><li>not currently used</li></ul>
+		<li>bool isGood</li>
+	</ul>
+	<h2>Public Methods</h2>
+	<ul>
+		<li>Constructors:</li>
+		<ul>
+			<li>honeyd_parser();</li>
+			<ul><li>a)  Its fields are empty strings, and isGood indicates that a string has not yet been handed to the object.</li></ul>
+			<li>honeyd_parser(std::string rawString);</li>
+			<ul><li>a)  parses the string into the fields</li></ul>
+			<li>~honeyd_parser();</li>
+			<ul><li>Strings handled all their own dynamic memory, this doesn't call anything</li></ul>
+		</ul>
+		<li>Methods</li>
+		<ul>
+			<li>void setString(std::string rawString);</li>
+			<ul><li>parses the passed string into the fields</li></ul>
+			<li>string getTimeStamp();<li>
+				<ul><li>returns timeStamp, or a string indicating that the object has not yet been given a string</li></ul>
+			<li>string getPacketType();</li>
+			<ul><li>returns packetType, or a string indicating that the object has not yet been given a string</li></ul>
+			<li>string getSourceIP();</li>
+			<ul><li>returns packetType, or a string indicating that the object has not yet been given a string</li></ul>
+			<li>string getTargetIP();</li>
+			<ul><li>returns targetIP, or a string indicating that the object has not yet been given a string</li></ul>
+			<li>string getTargetSocket();</li>
+			<ul><li>returns targetSocket, or a string indicating that the object has not yet been given a string</li></ul>
+			<li>string getOsVersion();</li>
+			<ul><li>returns osVersion, or a string indicating that the object has not yet been given a string</li></ul>
+		</ul>
+	</ul>
+	
+</body>
+
+</html>
+

@@ -1,0 +1,50 @@
+format 74
+
+classcanvas 128117 class_ref 129141 // file_reader
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 10 133 2000
+end
+subject 128245 "file management"
+  xyzwh 134 24 2000 479 591
+usecasecanvas 128373 usecase_ref 129525 // get approval to delete original (renamed) file contents
+  xyzwh 266 544 3005 64 32 label_xy 145 576
+end
+usecasecanvas 128757 usecase_ref 129653 // dump file contents
+  xyzwh 430 148 3005 64 32 label_xy 409 180
+end
+classcanvas 129013 class_ref 129269 // log_file
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 689 131 2000
+end
+classcanvas 129269 class_ref 135797 // mysqlPush
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 12 243 2000
+end
+usecasecanvas 129525 usecase_ref 136181 // rename orignal file
+  xyzwh 190 40 3005 64 32 label_xy 169 72
+end
+usecasecanvas 129909 usecase_ref 136309 // create new file with old name
+  xyzwh 229 178 3005 64 32 label_xy 177 210
+end
+usecasecanvas 130293 usecase_ref 136437 // restore everything to the way it found it
+  xyzwh 458 392 3005 64 32 label_xy 377 424
+end
+line 128629 --->
+  from ref 128117 z 3006 label "give approval" xyz 137 352 3006 to ref 128373
+line 129141 --->
+  from ref 128757 z 3006 label "gives new empty" xyz 541 146 3006 to ref 129013
+line 129397 --->
+  from ref 129269 z 3006 label "gives approval" xyz 137 407 3006 to ref 128373
+line 129653 --->
+  from ref 128117 z 3006 label "gives approval" xyz 92 89 3006 to ref 129525
+line 130037 ----
+  from ref 129525 z 3006 label "make new file" xyz 199 106 3006 to ref 129909
+simplerelationcanvas 130165 simplerelation_ref 134773
+  from ref 128373 z 3006 stereotype "<<if approval>>" xyz 331 361 3000 to ref 128757
+end
+simplerelationcanvas 130421 simplerelation_ref 134901
+  from ref 128373 z 3006 stereotype "<<else>>" xyz 363 482 3000 to ref 130293
+end
+line 130549 --->
+  from ref 130293 z 3006 label "saves data until it can update the server" xyz 479 272 3006 to ref 129013
+end

@@ -1,0 +1,26 @@
+format 74
+
+subject 128245 "file management"
+  xyzwh 151 18 2000 486 435
+classcanvas 128373 class_ref 135797 // mysqlPush
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 40 59 2005
+end
+classcanvas 128501 class_ref 129141 // file_reader
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 41 166 2005
+end
+classcanvas 128629 class_ref 129269 // log_file
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 670 78 2000
+end
+usecasecanvas 128757 usecase_ref 142965 // delete file
+  xyzwh 357 134 3005 64 32 label_xy 361 166
+end
+line 128885 --->
+  from ref 128501 z 3006 label "enables" xyz 210 154.5 3000 to ref 128757
+line 129141 --->
+  from ref 128373 z 3006 label "enables" xyz 212 102 3000 to ref 128757
+line 129269 --->
+  from ref 128757 z 3006 label "deletes and makes a new with same name" xyz 421 110.5 3000 to ref 128629
+end

@@ -1,0 +1,43 @@
+format 74
+
+subject 128245 "mysql server updates"
+  xyzwh 117 19 2000 552 421
+classcanvas 128373 class_ref 149109 // log_statement
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 24 134 2005
+end
+usecasecanvas 128501 usecase_ref 149493 // insert queue
+  xyzwh 216 41 3005 64 32 label_xy 213 73
+end
+usecasecanvas 128757 usecase_ref 149621 // bind to prepared statement
+  xyzwh 529 42 3005 64 32 label_xy 484 74
+end
+classcanvas 129013 class_ref 149237 // server
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 737 142 2000
+end
+usecasecanvas 129141 usecase_ref 149749 // execute prep stmt
+  xyzwh 532 171 3005 64 32 label_xy 512 203
+end
+classcanvas 129653 class_ref 149493 // cache
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 731 294 2000
+end
+usecasecanvas 129909 usecase_ref 149877 // individual bind
+  xyzwh 313 288 3005 64 32 label_xy 304 320
+end
+line 128629 --->
+  from ref 128373 z 3006 label "pushed onto" xyz 130 87 3000 to ref 128501
+line 128885 --->
+  from ref 128501 z 3006 label "send to in batches of BINDSIZE" xyz 310.5 38.5 3000 to ref 128757
+line 129269 --->
+  from ref 128757 z 3006 label "calls" xyz 548 104 3000 to ref 129141
+line 129397 --->
+  from ref 129141 z 3006 label "inserts" xyz 646 162 3000 to ref 129013
+line 129781 --->
+  from ref 129141 z 3006 label "or appends, if no connection" xyz 575.5 238 3000 to ref 129653
+line 130037 --->
+  from ref 128501 z 3006 label "bind remainder" xyz 253 162 3000 to ref 129909
+line 130165 --->
+  from ref 129909 z 3006 label "calls" xyz 438 227 3000 to ref 129141
+end

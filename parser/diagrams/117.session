@@ -1,0 +1,23 @@
+window_sizes 1366 702 234 1126 508 120
+diagrams
+  active  usecasediagram_ref 128117 // broad view
+    1126 508 100 4 0 0
+  usecasediagram_ref 128245 // parser class
+    955 406 100 4 0 0
+  usecasediagram_ref 128373 // data validation
+    955 406 100 4 0 0
+  usecasediagram_ref 128501 // file management
+    955 406 100 4 0 0
+  usecasediagram_ref 135029 // file management 2
+    955 406 100 4 0 0
+  usecasediagram_ref 135157 // mysql updates
+    1126 508 100 4 0 0
+end
+show_stereotypes
+selected usecasediagram_ref 128117 // broad view
+open
+  usecaseview_ref 128117 // useCase0
+  usecaseview_ref 128245 // usecase1
+  usecase_ref 129525 // get approval to delete original (renamed) file contents
+end
+end

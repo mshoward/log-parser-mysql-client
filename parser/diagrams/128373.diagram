@@ -1,0 +1,20 @@
+format 74
+
+classcanvas 128117 class_ref 128885 // segmented_data
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 35 126 2000
+end
+subject 128245 "parser"
+  xyzwh 138 17 2000 489 368
+usecasecanvas 128373 usecase_ref 129397 // set invalid strings
+  xyzwh 350 93 3005 64 32 label_xy 331 125
+end
+classcanvas 128629 class_ref 129013 // mysqlPush
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 681 112 2000
+end
+line 128501 ----
+  from ref 128117 z 3006 label "if no valid flag" xyz 204 113 3006 to ref 128373
+line 128757 ----
+  from ref 128373 z 3006 label "to update records" xyz 496 108 3006 to ref 128629
+end

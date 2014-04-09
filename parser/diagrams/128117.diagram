@@ -1,0 +1,53 @@
+format 74
+
+subject 130165 "logfile-parser-mysql-client"
+  xyzwh 113 17 2000 597 457
+usecasecanvas 131701 usecase_ref 128245 // log statement container
+  xyzwh 337 214 3005 64 32 label_xy 301 246
+end
+classcanvas 132085 class_ref 128245 // mysql_Server
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 741 144 2000
+end
+classcanvas 132213 class_ref 128373 // logfile
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 16 180 2000
+end
+usecasecanvas 132725 usecase_ref 128501 // parser class
+  xyzwh 221 45 3005 64 32 label_xy 217 77
+end
+usecasecanvas 133109 usecase_ref 128629 // mysqlPush
+  xyzwh 533 315 3005 64 32 label_xy 533 347
+end
+usecasecanvas 133493 usecase_ref 128757 // file management
+  xyzwh 250 360 3005 64 32 label_xy 234 392
+end
+classcanvas 134261 class_ref 148853 // cache
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 753 324 2000
+end
+classcanvas 134901 class_ref 148981 // lpmc_log
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 743 53 2000
+end
+line 133877 --->
+  from ref 133493 z 3006 label "dumps data in file" xyz 107 274.5 3006 to ref 132213
+line 134389 --->
+  from ref 133109 z 3006 label "Inserts if online" xyz 618 241.5 3000 to ref 132085
+line 134517 ---> decenter_begin 703
+  from ref 133109 z 3006 label "otherwise, outputs to" xyz 613.5 328 3000 to ref 134261
+line 134645 --->
+  from ref 133109 z 3006 label "regardless of connection" xyz 351 333.5 3000 to ref 133493
+line 135413 --->
+  from ref 131701 z 3006 label "sends to" xyz 273 172 3000 to point 254 164
+  line 135797 z 3006 to ref 132725
+line 135541 --->
+  from ref 132213 z 3006 label "read into" xyz 171.5 202.5 3000 to ref 131701
+line 135669 --->
+  from ref 132725 z 3006 to point 337 81
+  line 135925 z 3006 label "returns segmented and validated data" xyz 278.5 128.5 3000 to ref 131701
+line 136309 --->
+  from ref 131701 z 3006 label "if valid" xyz 448.5 262 3000 to ref 133109
+line 136565 --->
+  from ref 131701 z 3006 label "otherwise, log invalid data" xyz 496 138 3000 to ref 134901
+end

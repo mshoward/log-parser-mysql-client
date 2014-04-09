@@ -1,0 +1,80 @@
+<!--
+   honeyD_Log.html
+   
+   Copyright 2014 Mason Howard <mason@fastbadger>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+   
+   
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>/classes/HoneyDLogStatement</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 1.23.1" />
+	<link rel="stylesheet" type="text/css" href="doc-styles.css">
+
+</head>
+
+<!--
+
+std::string timeStamp; //DateTime
+			std::string packetType; //packetType
+			std::string sourceIP; //sourceIP -000.000.000.000
+			std::string sourceSocket; //sourceSocket
+			std::string targetIP; //targetIP
+			std::string targetSocket;//targetSocket
+			std::string osVersion; //Version
+			HoneyDLogStatement();
+			~HoneyDLogStatement();
+			HoneyDLogStatement(std::string rawLine);
+			void populateFields(std::string rawLine);
+-->
+
+<body>
+	<a href="index.html">Root</a></br>
+	<a href="classes.html">Up one level...</a>
+	<h1>/classes/HoneyD_LogStatement/</h1>
+	<h2>Public Fields</h2>
+	<ul>
+		<li>string timeStamp --- time stamp of the log statement</li>
+		<li>string packetType --- (in general) connection protocol of the event</li>
+		<li>string sourceIP --- source IP Address of the packet</li>
+		<li>string sourceSocket --- which port it's from</li>
+		<li>string targetIP --- target IP Address</li>
+		<li>string targetSocket --- which port it's going to</li>
+		<li>string osVersion --- Operating system version of either the source or the target -- need more info</li>
+	</ul>
+	<h2>Public Methods</h2>
+	<ul>
+		<li>Constructors:</li>
+		<ul>
+			<li>1)  HoneyDLogStatement();</li>
+			<ul><li>a)  Its fields are not empty strings, but rather indicate that a string has not yet been handed to the object.</li></ul>
+			<li>2)  HoneyDLogStatement(string rawLine);</li>
+			<ul><li>a)  HoneyDLogStatement passes the string to honeyd_parser and it returns the parsed the string into the fields</li></ul>
+		</ul>
+		<li>populateFields(string rawLine)</li>
+		<ul><li>This passes the string to honeyd_parser and it returns the parsed string into the fields</li></ul>
+	</ul>
+	
+</body>
+
+</html>

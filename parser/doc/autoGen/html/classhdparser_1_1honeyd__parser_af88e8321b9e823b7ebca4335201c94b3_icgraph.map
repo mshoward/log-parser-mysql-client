@@ -1,0 +1,6 @@
+<map id="hdparser::honeyd_parser::getSourceSocket" name="hdparser::honeyd_parser::getSourceSocket">
+<area shape="rect" id="node2" href="$class_honey_d_log_statement.html#af1be81e2f629934d98a058f31205ce75" title="HoneyDLogStatement\l::HoneyDLogStatement" alt="" coords="219,5,378,46"/>
+<area shape="rect" id="node3" href="$class_honey_d_log_statement.html#ad11779dcc4c52da6aa1464ceee6bd1da" title="HoneyDLogStatement\l::populateFields" alt="" coords="223,70,374,111"/>
+<area shape="rect" id="node4" href="$class_honey_d_log_statement.html#a2a03d555b4b4efffabda9c886c686dca" title="HoneyDLogStatement\l::populateFields" alt="" coords="427,41,578,82"/>
+<area shape="rect" id="node5" href="$parser_8cpp.html#a49ec08a4033b1e1a3fefb77322413eb3" title="safe_NextPopFields" alt="" coords="433,107,573,133"/>
+</map>

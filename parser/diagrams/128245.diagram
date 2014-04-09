@@ -1,0 +1,35 @@
+format 74
+
+classcanvas 128117 class_ref 128629 // log_statement
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 13 111 2000
+end
+subject 128245 "parser class"
+  xyzwh 117 5 2000 481 357
+usecasecanvas 128373 usecase_ref 128885 // data structure
+  xyzwh 199 38 3005 64 32 label_xy 191 70
+end
+usecasecanvas 128629 usecase_ref 129013 // match data
+  xyzwh 180 213 3005 64 32 label_xy 180 245
+end
+usecasecanvas 128885 usecase_ref 129141 // set flags
+  xyzwh 407 74 3005 64 32 label_xy 414 106
+end
+classcanvas 129141 class_ref 128757 // log_statement_data_structure
+  class_drawing_mode default show_context_mode default show_stereotype_properties default
+  xyz 617 92 2000
+end
+usecasecanvas 129269 usecase_ref 129269 // return to rest of program
+  xyzwh 445 243 3005 64 32 label_xy 407 275
+end
+line 128757 ----
+  from ref 128373 z 3006 label "match determined, load into" xyz 139 123 3006 to ref 128629
+line 129525 ----
+  from ref 129269 z 3006 label "flags say which fields are valid" xyz 483.5 182 3006 to ref 129141
+line 129781 --->
+  from ref 128117 z 3006 label "scanned for matches" xyz 82 173 3000 to ref 128629
+line 129909 --->
+  from ref 128373 z 3006 label "set valid flag" xyz 297 53.5 3000 to ref 128885
+line 130037 --->
+  from ref 128629 z 3006 label "whole statement scanned" xyz 269 224 3000 to ref 129269
+end
