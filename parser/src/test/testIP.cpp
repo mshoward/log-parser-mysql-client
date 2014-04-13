@@ -91,7 +91,7 @@ bool PullTS(std::string &inStr, std::string &outStr)
 
 std::string formatTS(std::string ts)
 {
-	std::string ret = "";
+	std::string ret = "test";
 	return ret;
 }
 
