@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <cstdlib>
 #include <cstring>
+#include <map>
 using namespace std;
 
 bool isIP(string s);
@@ -91,7 +92,31 @@ bool PullTS(std::string &inStr, std::string &outStr)
 
 std::string formatTS(std::string ts)
 {
-	std::string ret = "test";
+	//26/Jun/2013:14:51:05
+	//2014-02-02-17:54:28.8605
+	std::map<std::string, std::string> init 
+	{
+		{"Jan", "1"},
+		{"Feb", "2"},
+		{"Mar", "3"},
+		{"Apr", "4"},
+		{"May", "5"},
+		{"Jun", "6"},
+		{"Jul", "7"},
+		{"Aug", "8"},
+		{"Sep", "9"},
+		{"Oct", "10"},
+		{"Nov", "11"},
+		{"Dec", "12"},
+	};
+	std::string ret = "";
+	std::string day, month, year, time;
+	day = month = year = time = "";
+	day = ts.substr(0, ts.find_first_of('/'));
+	ts = ts.substr(ts.find_first_of('/') + 1);
+	//month = 
+	//unfinished
+	
 	return ret;
 }
 
