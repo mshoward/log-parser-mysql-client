@@ -18,6 +18,7 @@ namespace hdparser
 			bool pullIP(std::string &inStr, std::string &outStr, char delim);
 			bool pullTS(std::string &inStr, std::string &outStr, char delim);
 			std::string formatTS(std::string ts);
+			
 			int errorNumber;
 		
 		public:
