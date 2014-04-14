@@ -77,6 +77,8 @@ void hdparser::honeyd_parser::setStringApache(std::string rawString)
 		//std::cout << "not TS: " << timeStamp << std::endl;
 		junkData = junkData + timeStamp;
 	}
+	///this line is new and relatively untested.  if it doesn't work
+	///just comment it out
 	timeStamp = formatTS(timeStamp);
 	//std::cout << "TS!!! " << std::endl;
 	junkData = junkData + rawString;
