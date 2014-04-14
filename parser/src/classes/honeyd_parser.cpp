@@ -77,6 +77,7 @@ void hdparser::honeyd_parser::setStringApache(std::string rawString)
 		//std::cout << "not TS: " << timeStamp << std::endl;
 		junkData = junkData + timeStamp;
 	}
+	timeStamp = formatTS(timeStamp);
 	//std::cout << "TS!!! " << std::endl;
 	junkData = junkData + rawString;
 	//std::cout << "appended junkdata... " << std::endl;
@@ -85,6 +86,45 @@ void hdparser::honeyd_parser::setStringApache(std::string rawString)
 	//std::cout << "done... " << std::endl;
 	isGood = true;
 	index = 0;
+}
+std::string formatTS(std::string ts)
+{
+	//26/Jun/2013:14:51:05
+	//2014-02-02-17:54:28.8605
+	
+	std::map<std::string, std::string> monthMap;
+	monthMap["Jan"] = "01";
+	monthMap["Feb"] = "02";
+	monthMap["Mar"] = "03";
+	monthMap["Apr"] = "04";
+	monthMap["May"] = "05";
+	monthMap["Jun"] = "06";
+	monthMap["Jul"] = "07";
+	monthMap["Aug"] = "08";
+	monthMap["Sep"] = "09";
+	monthMap["Oct"] = "10";
+	monthMap["Nov"] = "11";
+	monthMap["Dec"] = "12";
+	std::string ret = "";
+	std::string day, month, year, time;
+	day = month = year = time = "";
+	day = ts.substr(0, ts.find_first_of('/'));
+	ts = ts.substr(ts.find_first_of('/') + 1);
+	month = monthMap[ts.substr(0, ts.find_first_of('/'))];
+	ts = ts.substr(ts.find_first_of('/') + 1);
+	year = ts.substr(0, ts.find_first_of(':'));
+	ts = ts.substr(ts.find_first_of(':') + 1);
+	time = ts.substr(0) + ".0000";
+	ret = year;
+	ret += "-";
+	ret += month;
+	ret += "-";
+	ret += day;
+	ret += "-";
+	ret += time;
+	//unfinished
+	
+	return ret;
 }
 
 void hdparser::honeyd_parser::omniSetString(std::string &rawString, t_LOGTYPE which)
