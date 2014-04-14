@@ -94,27 +94,37 @@ std::string formatTS(std::string ts)
 {
 	//26/Jun/2013:14:51:05
 	//2014-02-02-17:54:28.8605
-	std::map<std::string, std::string> init 
-	{
-		{"Jan", "1"},
-		{"Feb", "2"},
-		{"Mar", "3"},
-		{"Apr", "4"},
-		{"May", "5"},
-		{"Jun", "6"},
-		{"Jul", "7"},
-		{"Aug", "8"},
-		{"Sep", "9"},
-		{"Oct", "10"},
-		{"Nov", "11"},
-		{"Dec", "12"},
-	};
+	
+	std::map<std::string, std::string> monthMap;
+	monthMap["Jan"] = "01";
+	monthMap["Feb"] = "02";
+	monthMap["Mar"] = "03";
+	monthMap["Apr"] = "04";
+	monthMap["May"] = "05";
+	monthMap["Jun"] = "06";
+	monthMap["Jul"] = "07";
+	monthMap["Aug"] = "08";
+	monthMap["Sep"] = "09";
+	monthMap["Oct"] = "10";
+	monthMap["Nov"] = "11";
+	monthMap["Dec"] = "12";
 	std::string ret = "";
 	std::string day, month, year, time;
 	day = month = year = time = "";
 	day = ts.substr(0, ts.find_first_of('/'));
 	ts = ts.substr(ts.find_first_of('/') + 1);
-	//month = 
+	month = monthMap[ts.substr(0, ts.find_first_of('/'))];
+	ts = ts.substr(ts.find_first_of('/') + 1);
+	year = ts.substr(0, ts.find_first_of(':'));
+	ts = ts.substr(ts.find_first_of(':') + 1);
+	time = ts.substr(0) + ".0000";
+	ret = year;
+	ret += "-";
+	ret += month;
+	ret += "-";
+	ret += day;
+	ret += "-";
+	ret += time;
 	//unfinished
 	
 	return ret;
@@ -137,8 +147,13 @@ int main()
 	while(!(PullTS(ln, myOther))) ;
 	cout << myOther << endl;
 	cout<< ln << endl;
-	
-	
+	cout << endl << endl;
+	//26/Jun/2013:14:51:05
+	//2014-02-02-17:54:28.8605
+	//26/Jun/2013:14:51:05
+	//2013-06-26-14-51-05.0000
+	cout << formatTS(myOther) << endl;
+	cout << "should be: " << endl << "2013-06-26-14-51-05.0000" << endl;
 	
 	return 0;
 }
