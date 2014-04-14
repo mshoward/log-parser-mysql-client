@@ -52,7 +52,7 @@ int main()
 {
 	main_init();
 	std::string bucket = "";
-	std::fstream cache(configuration.cache_filePath.c_str(), std::ios_base::in);
+	std::fstream cache(configuration.cache_filePath.c_str(), std::ios::app | std::ios::in | std::ios::out);
 	std::fstream honey_log(configuration.honeyd_log_filePath.c_str(), std::ios_base::in);
 	std::fstream apache_log(configuration.apache_log_filePath.c_str(), std::ios_base::in);
 	
@@ -77,7 +77,7 @@ int main()
 	flushCache(cache, mysql);
 	cache.close();
 	dumpFile(configuration.cache_filePath);
-	cache.open(configuration.cache_filePath.c_str(), std::ios_base::out);
+	cache.open(configuration.cache_filePath.c_str(), std::ios::app | std::ios::in | std::ios::out);
 	//std::cout << "IT'S WORKING: " << 
 	std::cout << "Status: ";
 	if(mysql.isConnected())

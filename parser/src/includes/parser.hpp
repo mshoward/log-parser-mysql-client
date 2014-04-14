@@ -88,11 +88,30 @@ void dumpFile(std::string &fpath)
 
 void flushCache(std::fstream &cache, mysqlPush &sql)
 {
-	std::string bucket = "";
-	while (!(cache.eof()))
+	if (sql.isConnected())
 	{
-		std::getline(cache, bucket);
-		sql.execQuery(bucket);
+		std::string bucket = "";
+		while ((!(cache.eof())) && (sql.isConnected()))
+		{
+			if (cache.peek() != ';')
+			{
+				bucket += cache.get();
+			}
+			else
+			{
+				bucket += cache.get();
+				sql.execQuery(bucket);
+				bucket.clear();
+			}
+			//std::getline(cache, bucket);
+			//sql.execQuery(bucket);
+		}
+		if (!(sql.isConnected()))
+			exit(666);
+	}
+	else
+	{
+		exit(666);
 	}
 }
 

@@ -410,5 +410,10 @@ int mysqlPush::enqueue(HoneyDLogStatement &param)
 
 int mysqlPush::execQuery(std::string &someString)
 {
+	if (isConnected())
 	return mysql_query(mysql, someString.c_str());
+	else
+	{
+		(*backup) << someString << std::endl;
+	}
 }
