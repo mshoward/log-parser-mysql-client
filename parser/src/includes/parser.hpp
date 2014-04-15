@@ -1,6 +1,6 @@
 #pragma once
 
-#define PATH "/home/mason/School/SoftwareEngineering/parser/src/conf/lpmc.conf"
+#define PATH "/home/mason/gits/lpmc/log-parser-mysql-client/parser/src/conf/lpmc.conf"
 typedef struct
 {
 	std::string honeyd_log_filePath;
@@ -47,7 +47,7 @@ void getConfiguration()
 	if (!(conf.is_open()))
 	{
 		fprintf(stderr, "Config file not found.  Exiting lpmc.");
-		printf("Config file not found.  Exiting lpmc.");
+		printf("Config file not found.  Exiting lpmc.\n");
 		/** exit 2 means it can't find the config file */
 		exit(2);
 	}

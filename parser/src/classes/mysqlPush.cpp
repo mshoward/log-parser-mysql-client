@@ -105,7 +105,7 @@ int mysqlPush::queue_info(hdparser::honeyd_parser::t_LOGTYPE which, hdparser::ho
 		temp += "NULL)";
 		temp += "\n";
 		honeyd_query += temp;
-		std::cout << temp << std::endl;
+		//std::cout << temp << std::endl;
 	}
 	else if (val)
 	{
@@ -151,9 +151,9 @@ int mysqlPush::flush_queue(hdparser::honeyd_parser::t_LOGTYPE which)
 	int ret;
 	if(which == hdparser::honeyd_parser::HONEY_D)
 	{
-		std::cout << "SENDING DATA..." << std::endl;
+		//std::cout << "SENDING DATA..." << std::endl;
 		honeyd_query += ";";
-		std::cout << honeyd_query << std::endl;
+		//std::cout << honeyd_query << std::endl;
 		ret = execQuery(honeyd_query);
 		logsWaiting = 0;
 		honeyd_query = "INSERT INTO Information (DateTime, packetType, sourceIP, sourceSocket, targetIP, targetSocket, Version,  attackType, apacheTime) VALUES ";
