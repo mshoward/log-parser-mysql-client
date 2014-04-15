@@ -89,12 +89,12 @@ void hdparser::honeyd_parser::setStringApache(std::string rawString)
 	isGood = true;
 	index = 0;
 }
-std::string formatTS(std::string ts)
+std::string hdparser::honeyd_parser::formatTS(std::string ts)
 {
 	//26/Jun/2013:14:51:05
 	//2014-02-02-17:54:28.8605000
 	
-	std::map<std::string, std::string> monthMap;
+	std::map <std::string, std::string> monthMap;
 	monthMap["Jan"] = "01";
 	monthMap["Feb"] = "02";
 	monthMap["Mar"] = "03";

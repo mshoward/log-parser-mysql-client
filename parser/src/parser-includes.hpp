@@ -6,6 +6,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <sstream>
+#include <map>
 #include <sys/stat.h>
 #include <queue>
 

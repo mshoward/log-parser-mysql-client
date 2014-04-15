@@ -30,6 +30,7 @@ void safe_NextPopFields(honeyd_parser &someStmt, honeyd_parser::t_LOGTYPE t,
 	{
 		//std::cout << "getting line pt2 " << std::endl;
 		std::getline(someStream, someString);
+		//std::cout << someString << std::endl;
 		//std::cout << "getting line pt3 " << std::endl;
 		someStmt.omniSetString(someString, t);
 		//std::cout << "done " << std::endl;
@@ -42,6 +43,7 @@ void safe_NextPopFields(HoneyDLogStatement &someStmt, std::string &someString, s
 	if (!(someStream.eof()))
 	{
 		std::getline(someStream, someString);
+		
 		someStmt.populateFields(someString, someType);
 	}
 }
@@ -105,7 +107,10 @@ int main()
 	honey_log.close();
 	std::cout << "... done" << std::endl;
 	if (mysql.isConnected())
-	dumpFile(configuration.honeyd_log_filePath);
+	{
+		//dumpFile(configuration.honeyd_log_filePath);
+		std::cout << "dumped file" << std::endl;
+	}
 	logtype = honeyd_parser::APACHE;
 	std::cout << "Starting apache log..." << std::endl;
 	lineNo = 0;
@@ -128,8 +133,10 @@ int main()
 	apache_log.close();
 	std::cout << "... done" << std::endl;
 	if (mysql.isConnected())
-	dumpFile(configuration.apache_log_filePath);
-	
+	{
+		//dumpFile(configuration.apache_log_filePath);
+		std::cout << "dumped file" << std::endl;
+	}
 	//std::cout << "IT'S WORKING: " << mysql.isConnected() << std::endl;
 	
 	std::cout << std::endl;
