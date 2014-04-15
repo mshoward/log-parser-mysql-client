@@ -81,7 +81,7 @@ int mysqlPush::queue_info(hdparser::honeyd_parser::t_LOGTYPE which, hdparser::ho
 				parsed.getValidTargetSocket() &&
 				parsed.getValidTimeStamp();
 	else
-		val = parsed.isTS(parsed.timeStamp)&&
+		val = parsed.getValidTimeStamp()&&
 				parsed.getValidSourceIP();
 	
 	std::string temp = "\n(";
@@ -120,7 +120,7 @@ int mysqlPush::queue_info(hdparser::honeyd_parser::t_LOGTYPE which, hdparser::ho
 		temp += "NULL, ";
 		temp += "\"" + parsed.attackStr + "\"" + ", ";
 		temp += "\"" + parsed.timeStamp + "\"" + ")\n";
-		std::cout << temp << std::endl;
+		//std::cout << temp << std::endl;
 		apache_query += temp;
 	}
 	if (val)
@@ -163,7 +163,7 @@ int mysqlPush::flush_queue(hdparser::honeyd_parser::t_LOGTYPE which)
 	{
 		std::cout << "SENDING DATA..." << std::endl;
 		apache_query += ";";
-		std::cout << apache_query << std::endl;
+		//std::cout << apache_query << std::endl;
 		ret = execQuery(apache_query);
 		logsWaiting = 0;
 		apache_query = "INSERT INTO Information (DateTime, packetType, sourceIP, sourceSocket, targetIP, targetSocket, Version,  attackType, apacheTime) VALUES ";
